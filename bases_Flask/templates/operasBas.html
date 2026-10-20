@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block container %}
+
+<h1>Distancia entre 2 puntos</h1>
+
+<form action="/distancia" method="post">
+
+    <div class="mb-3">
+        <label for="x1" class="form-label">X1:</label>
+        <input type="number" step="any" class="form-control" id="x1" name="x1">
+    </div>
+
+    <div class="mb-3">
+        <label for="y1" class="form-label">Y1:</label>
+        <input type="number" step="any" class="form-control" id="y1" name="y1">
+    </div>
+
+    <div class="mb-3">
+        <label for="x2" class="form-label">X2:</label>
+        <input type="number" step="any" class="form-control" id="x2" name="x2">
+    </div>
+
+    <div class="mb-3">
+        <label for="y2" class="form-label">Y2:</label>
+        <input type="number" step="any" class="form-control" id="y2" name="y2">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Calcular</button>
+
+</form>
+
+<h1>
+    La distancia entre los puntos es: {{ "%.2f"|format(res) }}
+</h1>
+
+{% endblock %}
